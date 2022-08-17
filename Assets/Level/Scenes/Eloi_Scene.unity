@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 452571472}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: avalable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,6 +267,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MultipleSpeed: 6
+  bullet: {fileID: 2203196800803567540, guid: 59a2e11b085bc9d48b583db85e528098, type: 3}
+  projectile_stocke: {fileID: 0}
 --- !u!50 &1041042688
 Rigidbody2D:
   serializedVersion: 4
