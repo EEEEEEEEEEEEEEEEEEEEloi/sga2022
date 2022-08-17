@@ -9,6 +9,9 @@ public class controller : MonoBehaviour
     float MultipleSpeed;
     float horizon;
     float vertical;
+    [SerializeField]
+    GameObject bullet;
+    public GameObject projectile_stocke;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,12 @@ public class controller : MonoBehaviour
     {
         horizon = Input.GetAxis("Horizontal") * MultipleSpeed;
         vertical = Input.GetAxis("Vertical") * MultipleSpeed;
+
+        if (Input.GetButtonDown("Fire1")) {
+            GameObject NewBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            NewBullet.GetComponent<Rigidbody2D>().velocity = new Vector3 (2, 0, 0);
+            NewBullet.GetComponent<Bullet>().controller_ = this;
+        }
     }
 
     void FixedUpdate()
