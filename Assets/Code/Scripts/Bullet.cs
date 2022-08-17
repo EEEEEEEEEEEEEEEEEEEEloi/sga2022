@@ -15,6 +15,4 @@ public class Bullet : MonoBehaviour
             controller_.projectile_stocke = collision.gameObject;
         }
     }
-
-
 }
