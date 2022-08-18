@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
             //collision.transform.position = new Vector2(400, 400);
             collision.gameObject.SetActive(false);
             controller_.projectile_stocke = collision.gameObject;
-            controller_.projectile_stocke.GetComponent<BoxCollider2D>().isTrigger = true;
+            controller_.projectile_stocke.GetComponent<Collider2D>().isTrigger = true;
             controller_.BulletDestroyed();
             Bullet.Destroy(gameObject);
         }
