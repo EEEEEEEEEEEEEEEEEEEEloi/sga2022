@@ -47,6 +47,7 @@ public class controller : MonoBehaviour
             {
                 if (AmmoCount > 0)
                 {
+                    anim.SetTrigger("Catch");
                     GameObject NewBullet = Instantiate(bullet, transform.position, Quaternion.identity);
                     NewBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * VitesseBullet;
                     NewBullet.GetComponent<Bullet>().controller_ = this;
@@ -55,16 +56,14 @@ public class controller : MonoBehaviour
             }
             else
             {
+                anim.SetTrigger("Catch");
                 projectile_stocke.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 projectile_stocke.transform.position = transform.position + ((Vector3)direction).normalized * SpawnDist;
                 projectile_stocke.GetComponent<Rigidbody2D>().velocity = direction.normalized * VitesseBullet;
                 projectile_stocke = null;
             }
               
-            anim.SetTrigger("Catch");
-            GameObject NewBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            NewBullet.GetComponent<Rigidbody2D>().velocity = new Vector3 (2, 0, 0);
-            NewBullet.GetComponent<Bullet>().controller_ = this;
+            
         }
       
     }
