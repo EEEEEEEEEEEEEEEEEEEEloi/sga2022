@@ -30,6 +30,8 @@ public class controller : MonoBehaviour
     public void BulletDestroyed()
     {
         AmmoCount++;
+        if (AmmoCount > 1)
+            AmmoCount = 1;
     }
 
     // Update is called once per frame
