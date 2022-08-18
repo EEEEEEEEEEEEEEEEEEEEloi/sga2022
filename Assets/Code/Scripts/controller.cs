@@ -11,7 +11,12 @@ public class controller : MonoBehaviour
     float vertical;
     [SerializeField]
     GameObject bullet;
+    [SerializeField]
+    float VitesseBullet = 3.0f;
+    float SpawnDist = 2.0f;
+    Vector2 direction = new Vector2();
     public GameObject projectile_stocke;
+    public int AmmoCount = 1;
     // Start is called before the first frame update
     Animator anim;
 
@@ -19,6 +24,12 @@ public class controller : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        direction = Vector2.right;
+    }
+
+    public void BulletDestroyed()
+    {
+        AmmoCount++;
     }
 
     // Update is called once per frame
@@ -26,13 +37,36 @@ public class controller : MonoBehaviour
     {
         horizon = Input.GetAxis("Horizontal") * MultipleSpeed;
         vertical = Input.GetAxis("Vertical") * MultipleSpeed;
+        if (Mathf.Abs(horizon) > 0 || Mathf.Abs(vertical) > 0) {
+            direction.x = horizon;
+            direction.y = vertical;
+        }
 
         if (Input.GetButtonDown("Fire1")) {
+            if (projectile_stocke == null)
+            {
+                if (AmmoCount > 0)
+                {
+                    GameObject NewBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                    NewBullet.GetComponent<Rigidbody2D>().velocity = direction.normalized * VitesseBullet;
+                    NewBullet.GetComponent<Bullet>().controller_ = this;
+                    AmmoCount--;
+                }
+            }
+            else
+            {
+                projectile_stocke.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                projectile_stocke.transform.position = transform.position + ((Vector3)direction).normalized * SpawnDist;
+                projectile_stocke.GetComponent<Rigidbody2D>().velocity = direction.normalized * VitesseBullet;
+                projectile_stocke = null;
+            }
+              
             anim.SetTrigger("Catch");
             GameObject NewBullet = Instantiate(bullet, transform.position, Quaternion.identity);
             NewBullet.GetComponent<Rigidbody2D>().velocity = new Vector3 (2, 0, 0);
             NewBullet.GetComponent<Bullet>().controller_ = this;
         }
+      
     }
 
     void FixedUpdate()
