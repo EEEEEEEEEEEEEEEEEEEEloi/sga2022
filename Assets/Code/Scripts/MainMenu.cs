@@ -47,6 +47,9 @@ public class MainMenu : MonoBehaviour
             {
                 button.interactable = true;
             }
+            
+   
+    
         }
        
     }
