@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: -6432669173956807719}
   - component: {fileID: 4186427621903971872}
   m_Layer: 0
-  m_Name: "Bibiloth\xE9ke"
+  m_Name: "Bibilothe\u0301ke"
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
