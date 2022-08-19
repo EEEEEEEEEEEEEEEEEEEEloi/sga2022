@@ -7,13 +7,14 @@ public class MenuLara : MonoBehaviour
 {
     public void Playgame ()
 {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
 }
 
-public void QuitGame ()
+    public void QuitGame ()
 {
-Debug.Log("Quit!");
-Application.Quit();
+        Debug.Log("Quit!");
+        Application.Quit();
 }
 
     public void ShowMenu ()
@@ -22,10 +23,16 @@ Application.Quit();
     }
     public void LoadMenu ()
     {
+        GetComponent<AudioSource>().Play();
         Debug.Log("Loading menu...");
         SceneManager.LoadScene("menu");
 
     }
+    public void NextLevel(){
+        GetComponent<AudioSource>().Play();
+    }
+   
+
 
 
 
