@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MultipleSpeed: 6
   bullet: {fileID: 2203196800803567540, guid: 59a2e11b085bc9d48b583db85e528098, type: 3}
-  VitesseBullet: 6
+  VitesseBullet: 7
   SpawnDist: 2
   projectile_stocke: {fileID: 0}
   AmmoCount: 1
