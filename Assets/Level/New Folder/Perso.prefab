@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_Sprite: {fileID: 223198733, guid: dfd82cce0923d4d439f34e5d6c7eb784, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00025634095, y: 0.0010983199}
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MultipleSpeed: 6
-  bullet: {fileID: 2203196800803567540, guid: 59a2e11b085bc9d48b583db85e528098, type: 3}
+  bullet: {fileID: 6502264828959773168, guid: 18dbcb11a093ef641bf36191f01489ad, type: 3}
   VitesseBullet: 7
   SpawnDist: 2
   projectile_stocke: {fileID: 0}
