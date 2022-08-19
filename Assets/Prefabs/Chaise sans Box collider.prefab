@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8940567659177660725}
   - component: {fileID: 2025310637850026370}
   m_Layer: 0
-  m_Name: Chaise 1
+  m_Name: Chaise sans Box collider
   m_TagString: avalable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

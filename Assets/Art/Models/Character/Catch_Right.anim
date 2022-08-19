@@ -27,13 +27,13 @@ AnimationClip:
       value: {fileID: 427874526, guid: 630e06be5485745b8a6a7b1f617b5fce, type: 3}
     - time: 0.25
       value: {fileID: 1413020253, guid: 630e06be5485745b8a6a7b1f617b5fce, type: 3}
-    - time: 0.33333334
+    - time: 1
       value: {fileID: -785887475, guid: 630e06be5485745b8a6a7b1f617b5fce, type: 3}
-    - time: 0.41666666
+    - time: 1.0833334
       value: {fileID: 2012261327, guid: 630e06be5485745b8a6a7b1f617b5fce, type: 3}
-    - time: 0.5
+    - time: 1.1666666
       value: {fileID: 1960849382, guid: 630e06be5485745b8a6a7b1f617b5fce, type: 3}
-    - time: 0.5833333
+    - time: 1.25
       value: {fileID: -302076152, guid: 630e06be5485745b8a6a7b1f617b5fce, type: 3}
     attribute: m_Sprite
     path: 
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666666
+    m_StopTime: 1.3333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -86,4 +86,25 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: playerStop
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: PlayTongueRight
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.1666666
+    functionName: playerStop
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

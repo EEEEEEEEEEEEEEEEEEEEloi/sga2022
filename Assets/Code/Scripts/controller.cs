@@ -19,7 +19,7 @@ public class controller : MonoBehaviour
     public int AmmoCount = 1;
     public int playerHeight = 0;
     Animator anim;
-    
+     bool canMove = true;
 
     void Start()
     {
@@ -38,8 +38,10 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizon = Input.GetAxis("Horizontal") * MultipleSpeed;
-        vertical = Input.GetAxis("Vertical") * MultipleSpeed;
+        if(canMove){
+            horizon = Input.GetAxis("Horizontal") * MultipleSpeed;
+            vertical = Input.GetAxis("Vertical") * MultipleSpeed;
+        }
         if (Mathf.Abs(horizon) > 0 || Mathf.Abs(vertical) > 0) {
             direction.x = horizon;
             direction.y = vertical;
@@ -71,10 +73,22 @@ public class controller : MonoBehaviour
         }
       
     }
+   
+    public void playerStop(){
+     rigidbody2D.velocity = new Vector2(0,0);
+     horizon = 0;
+     vertical = 0;
+        
+        canMove = !canMove;
+    }
 
     void FixedUpdate()
     {
-        
+        if(projectile_stocke){
+            anim.SetBool("object", true);
+        }else{
+            anim.SetBool("object", false);
+        }
 
         rigidbody2D.velocity = new Vector2(horizon, vertical);
         anim.SetFloat("velocity_x", rigidbody2D.velocity.x);
