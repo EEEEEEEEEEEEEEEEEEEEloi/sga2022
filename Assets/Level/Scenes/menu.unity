@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548484463}
+      - m_Target: {fileID: 69618905}
         m_TargetAssemblyTypeName: MenuLara, Assembly-CSharp
         m_MethodName: Playgame
         m_Mode: 1
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 69618900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fbea936272dad540bf31d93b6acbe9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22a7dfe5949d0324c9560e3fbbe75fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &142829648
