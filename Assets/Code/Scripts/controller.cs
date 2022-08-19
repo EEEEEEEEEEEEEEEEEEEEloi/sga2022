@@ -13,12 +13,13 @@ public class controller : MonoBehaviour
     GameObject bullet;
     [SerializeField]
     float VitesseBullet = 3.0f;
-    float SpawnDist = 2.0f;
+    [SerializeField] float SpawnDist = 2.0f;
     Vector2 direction = new Vector2();
     public GameObject projectile_stocke;
     public int AmmoCount = 1;
-    // Start is called before the first frame update
+    public int playerHeight = 0;
     Animator anim;
+    
 
     void Start()
     {
@@ -30,6 +31,8 @@ public class controller : MonoBehaviour
     public void BulletDestroyed()
     {
         AmmoCount++;
+        if (AmmoCount > 1)
+            AmmoCount = 1;
     }
 
     // Update is called once per frame
@@ -59,6 +62,7 @@ public class controller : MonoBehaviour
                 anim.SetTrigger("Catch");
                 projectile_stocke.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 projectile_stocke.transform.position = transform.position + ((Vector3)direction).normalized * SpawnDist;
+                projectile_stocke.gameObject.SetActive(true);
                 projectile_stocke.GetComponent<Rigidbody2D>().velocity = direction.normalized * VitesseBullet;
                 projectile_stocke = null;
             }
