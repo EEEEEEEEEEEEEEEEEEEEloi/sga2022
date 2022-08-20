@@ -9,6 +9,7 @@ public class soundmanager : MonoBehaviour
     void Start(){
          audio= GetComponent<AudioSource>();
     }
+    
    public void PlayWinSound (){
     audio.Play();
    }

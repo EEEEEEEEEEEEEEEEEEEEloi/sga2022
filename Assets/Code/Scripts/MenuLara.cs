@@ -7,14 +7,29 @@ public class MenuLara : MonoBehaviour
 {
     public void Playgame ()
 {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
+      StartCoroutine(LoadSceneGame());
+         
 }
 
-    public void QuitGame ()
+private IEnumerator LoadSceneGame()
 {
-        Debug.Log("Quit!");
-        Application.Quit();
+    GetComponent<AudioSource>().Play();
+      yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+         
+}
+
+    public void Quit ()
+{
+       StartCoroutine(QuitGame());
+         
+}
+private IEnumerator QuitGame()
+{
+GetComponent<AudioSource>().Play();
+    yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+     Debug.Log("Quit!");
+     Application.Quit();
 }
 
     public void ShowMenu ()
@@ -28,7 +43,8 @@ public class MenuLara : MonoBehaviour
         SceneManager.LoadScene("menu");
 
     }
-    public void NextLevel(){
+    public void NextLevel()
+    {
         GetComponent<AudioSource>().Play();
     }
    

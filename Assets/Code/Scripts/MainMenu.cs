@@ -15,10 +15,18 @@ public class MainMenu : MonoBehaviour
     List<Button> buttons;
 
 
-    public void ShowHowToPlay()
+    public void HowToPlay()
     {
-        mainMenu.SetActive(false);
+         StartCoroutine(ShowHowToPlay());
+    }
+    private IEnumerator ShowHowToPlay()
+    {
+        GetComponent<AudioSource>().Play();
+    yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+     mainMenu.SetActive(false);
         howToPlay.SetActive(true);
+
+
     }
 
     public void ShowMainMenu()
@@ -26,6 +34,7 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
         howToPlay.SetActive(false);
         credits.SetActive(false);
+          
 
         foreach (var button in buttons)
         {
@@ -33,9 +42,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void ShowCredits()
-    {
-        if(!credits.active){
+    public void Credits()
+    { 
+        StartCoroutine(ShowCredits()); 
+    }
+
+    
+     private IEnumerator ShowCredits()
+            {
+                GetComponent<AudioSource>().Play();
+    yield return new WaitForSeconds(GetComponent<AudioSource>().clip.length);
+     if(!credits.active){
             credits.SetActive(true);
             foreach(var button in buttons)
             {
@@ -47,10 +64,11 @@ public class MainMenu : MonoBehaviour
             {
                 button.interactable = true;
             }
-            
+
+            }
    
     
         }
        
     }
-}
+
