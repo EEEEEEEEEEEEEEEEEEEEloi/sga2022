@@ -19,6 +19,7 @@ public class controller : MonoBehaviour
     public int AmmoCount = 1;
     public int playerHeight = 0;
     Animator anim;
+    [SerializeField]
      bool canMove = true;
 
     void Start()
@@ -38,9 +39,17 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(canMove){
             horizon = Input.GetAxis("Horizontal") * MultipleSpeed;
             vertical = Input.GetAxis("Vertical") * MultipleSpeed;
+        }
+        else
+        {
+            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                canMove = true;
+            }
         }
         if (Mathf.Abs(horizon) > 0 || Mathf.Abs(vertical) > 0) {
             direction.x = horizon;
@@ -75,11 +84,12 @@ public class controller : MonoBehaviour
     }
    
     public void playerStop(){
+        Debug.Log("playerStop");
      rigidbody2D.velocity = new Vector2(0,0);
      horizon = 0;
      vertical = 0;
-        
-        canMove = !canMove;
+
+        canMove = false;
     }
 
     void FixedUpdate()
