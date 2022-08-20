@@ -35,10 +35,22 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
-        credits.SetActive(true);
-        foreach(var button in buttons)
-        {
-            button.interactable = false;
+        if(!credits.active){
+            credits.SetActive(true);
+            foreach(var button in buttons)
+            {
+                button.interactable = false;
+            }
+        }else{
+            credits.SetActive(false);
+            foreach(var button in buttons)
+            {
+                button.interactable = true;
+            }
+            
+   
+    
         }
+       
     }
 }
