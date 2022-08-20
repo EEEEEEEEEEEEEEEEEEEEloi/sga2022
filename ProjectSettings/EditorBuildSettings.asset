@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Level/Scenes/SampleScene.unity
+    path: Assets/Level/Scenes/menu.unity
+    guid: ea774a24d63a9cc4c844f3af3b061a08
+  - enabled: 0
+    path: Assets/Scenes/game.unity
+    guid: b2fdf031bdd1efb4280f982fd8f59358
+  - enabled: 1
+    path: Assets/Code/Level/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Level/Scenes/Eloi_Scene.unity
+    path: Assets/Level/Scenes/Game1.unity
     guid: 797dae0dcb3b8f84c9829d8565064c64
   - enabled: 1
+    path: Assets/Scenes/ecran victoire.unity
+    guid: 3ee09152b5193334793d1b95fe6422db
+  - enabled: 0
     path: Assets/Level/Scenes/WinScene.unity
     guid: 8e52fa0b39902144a985aad22e34a523
+  - enabled: 0
+    path: Assets/Scenes/Nolan_Scene2.unity
+    guid: c832b1629d5094dc0ba048cd3a0565ba
   m_configObjects: {}
