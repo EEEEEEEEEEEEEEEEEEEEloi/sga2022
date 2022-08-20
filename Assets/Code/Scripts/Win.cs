@@ -8,7 +8,7 @@ public class Win : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("WinScene");
+            SceneManager.LoadScene("ecran_victoire");
         }
     }
 }
